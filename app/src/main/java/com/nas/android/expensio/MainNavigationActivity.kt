@@ -1,5 +1,6 @@
 package com.nas.android.expensio
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -60,8 +61,13 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         when (item.itemId) {
             R.id.add_category -> {
                 // Handles the action
+                val intent = Intent(applicationContext, AddCategory::class.java)
+                startActivity(intent)
+
             }
             R.id.set_budget -> {
+                val intent = Intent(applicationContext, SetBudget::class.java)
+                startActivity(intent)
 
             }
             R.id.view_spend_trends -> {

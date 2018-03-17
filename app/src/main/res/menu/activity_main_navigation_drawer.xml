@@ -7,20 +7,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/add_category"
-            android:icon="@mipmap/launcher_logo"
-            android:title="@string/home" />
+            android:icon="@drawable/ic_add_cat"
+            android:title="@string/add_category" />
         <item
             android:id="@+id/set_budget"
-            android:icon="@mipmap/launcher_logo"
-            android:title="@string/home" />
+            android:icon="@drawable/ic_action_name"
+            android:title="@string/setBudget" />
         <item
             android:id="@+id/view_spend_trends"
-            android:icon="@mipmap/launcher_logo"
-            android:title="@string/home" />
+            android:icon="@drawable/ic_view_icon"
+            android:title="@string/view_spend_trends" />
         <item
             android:id="@+id/debts_and_loans"
-            android:icon="@mipmap/launcher_logo"
-            android:title="@string/home" />
+            android:icon="@drawable/ic_debts_loans"
+            android:title="@string/debts_and_loans" />
     </group>
 
   <!--  <group android:checkableBehavior="single">

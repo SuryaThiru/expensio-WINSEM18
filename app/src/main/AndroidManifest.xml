@@ -21,7 +21,13 @@
         <activity
             android:name=".MainNavigationActivity"
             android:label="@string/todays_expenses"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SetBudget"
+            android:label="@string/setBudget" />
+        <activity android:name=".AddCategory"
+
+            android:label="@string/add_category" />
     </application>
 
 </manifest>
