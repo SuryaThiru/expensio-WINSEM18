@@ -2,4 +2,12 @@
     <string name="app_name">expensio</string>
     <string name="home">HOME</string>
     <string name="splash_content_description">Logo of the application</string>
+    <string name="title_activity_main_navigation">MainNavigationActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="expensio">Expensio</string>
+    <string name="Manage">Manage your expenses</string>
+    <string name="action_settings">Settings</string>
+    <string name="todays_expenses">"Today's expenses"</string>
 </resources>
