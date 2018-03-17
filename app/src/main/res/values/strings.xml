@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">expensio</string>
+    <string name="home">HOME</string>
+    <string name="splash_content_description">Logo of the application</string>
 </resources>
