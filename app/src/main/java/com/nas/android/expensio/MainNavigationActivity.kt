@@ -61,20 +61,23 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         when (item.itemId) {
             R.id.add_category -> {
                 // Handles the action
-                val intent = Intent(applicationContext, AddCategory::class.java)
+                val intent = Intent(applicationContext, CategoryList::class.java)
                 startActivity(intent)
 
             }
             R.id.set_budget -> {
-                val intent = Intent(applicationContext, SetBudget::class.java)
+                val intent = Intent(applicationContext, BudgetList::class.java)
                 startActivity(intent)
 
             }
             R.id.view_spend_trends -> {
+                val intent = Intent(applicationContext, ViewSpendTrends::class.java)
+                startActivity(intent)
 
             }
             R.id.debts_and_loans -> {
-
+                val intent = Intent(applicationContext, DebtsAndLoansList::class.java)
+                startActivity(intent)
             }
 
         }

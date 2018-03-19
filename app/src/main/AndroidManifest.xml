@@ -25,9 +25,18 @@
         <activity
             android:name=".SetBudget"
             android:label="@string/setBudget" />
-        <activity android:name=".AddCategory"
-
+        <activity
+            android:name=".AddCategory"
             android:label="@string/add_category" />
+        <activity
+            android:name=".DebtsAndLoansList"
+            android:label="@string/debts_and_loans" />
+        <activity
+            android:name=".ViewSpendTrends"
+            android:label="@string/view_spend_trends" />
+        <activity android:name=".AddDebtOrLoan" />
+        <activity android:name=".CategoryList" />
+        <activity android:name=".BudgetList"></activity>
     </application>
 
 </manifest>
