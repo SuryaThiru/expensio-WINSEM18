@@ -6,7 +6,7 @@ import io.realm.RealmObject
 /**
  * Created by surya on 3/19/18.
  */
-class User(
+open class User(
         var name: String = "John Doe",
         var budget: Int = 0,
         var expenses: RealmList<Expense> = RealmList(), // fancy one-to-many definitions

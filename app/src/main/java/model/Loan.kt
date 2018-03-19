@@ -11,13 +11,11 @@ import java.util.*
 val LOAN = true
 val DEBT = false
 
-class Loan(
+open class Loan(
         var amount: Int = 0,
         var remark: String = "some remark",
         var type: Boolean = DEBT,
         var actor: String = "some name", //name of the debtor (or) creditor
         var returnDate: Date? = null  //null if it's a credit
 
-) : RealmObject() {
-
-}
+) : RealmObject()

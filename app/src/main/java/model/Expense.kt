@@ -11,11 +11,9 @@ import java.util.*
 val GROCERY = "grocery"
 val BILLS = "bills"
 
-class Expense(
+open class Expense(
         var amount: Int = 0,
         var remarks: String = "some remarks",
         var category: String = GROCERY,
         var date: Date = Date()
-) : RealmObject() {
-
-}
+) : RealmObject()
