@@ -6,16 +6,17 @@ import java.util.*
  * Created by surya on 3/19/18.
  */
 
-enum class LoanType {
-    LOAN, DEBT
-}
+
+// types of loaning involved
+val LOAN = true
+val DEBT = false
 
 class Loan(
-        var amount: Int,
-        var remark: String,
-        var type: LoanType,
-        var actor: String, //name of the debtor (or) creditor
-        var returnDate: Date?  //null if it's a credit
+        var amount: Int = 0,
+        var remark: String = "some remark",
+        var type: Boolean = DEBT,
+        var actor: String = "some name", //name of the debtor (or) creditor
+        var returnDate: Date? = null  //null if it's a credit
 
 ) : RealmObject() {
 
