@@ -13,7 +13,7 @@
     <string name="title_activity_set_budget">Set budget</string>
     <string name="setBudget">Set budget</string>
     <string name="view_spend_trends">View spend trends</string>
-    <string name="add_category">Add category</string>
+    <string name="add_category">View or add category</string>
     <string name="debts_and_loans">Debts and loans</string>
     <string name="hint_name">Full Name</string>
     <string name="hint_email">Email</string>

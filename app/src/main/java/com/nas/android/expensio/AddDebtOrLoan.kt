@@ -5,17 +5,15 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
 
-class AddCategory : AppCompatActivity() {
+class AddDebtOrLoan : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_category)
+        setContentView(R.layout.activity_add_debt_or_loan)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "Detail Added", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
-
-
     }
 }
