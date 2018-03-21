@@ -11,7 +11,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main_navigation.*
+import kotlinx.android.synthetic.main.content_main_navigation.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
+
 
 class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 

@@ -23,16 +23,9 @@
 
     <include
         layout="@layout/content_main_navigation"
-        android:layout_height="600dp" />
+         />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_gravity="bottom|center_horizontal|end"
-        tools:layout_editor_absoluteY="55dp">
 
-    </android.support.v7.widget.RecyclerView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
