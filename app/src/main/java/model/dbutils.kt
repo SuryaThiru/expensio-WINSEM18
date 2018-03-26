@@ -3,6 +3,7 @@ package model
 import android.util.Log
 import com.nas.android.expensio.SetBudget
 import io.realm.Realm
+import io.realm.RealmList
 import java.util.*
 
 /**
@@ -26,11 +27,12 @@ fun getUser(realm: Realm, name: String) {
         Log.e("Realm query", "User not found")
 }
 
-fun setUserBudget(realm: Realm, budget: Int) {
+fun setUserBudget(realm: Realm, budget: Int, date: Date = Date()) {
     val user = realm.where<User>(User::class.java).findFirst()!!
 
-    realm.executeTransaction {_ ->
+    realm.executeTransaction { _ ->
         user.budget = budget
+        user.budgetStartDate = date
     }
 }
 
@@ -43,9 +45,9 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
     }
 
     val user = realm.where<User>(User::class.java).findFirst()!!
-    val expense = realm.createObject<Expense>(Expense::class.java)
 
-    realm.executeTransaction {_ ->
+    realm.executeTransaction { _ ->
+        val expense = realm.createObject<Expense>(Expense::class.java)
         expense.amount = amount
         expense.remarks = remarks
         expense.date = date
@@ -57,8 +59,7 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
 
 fun addCategory(realm: Realm, name: String, color: String) {
     realm.executeTransaction{ _ ->
-        val category = realm.createObject<Category>(Category::class.java)
-        category.name = name
+        val category = realm.createObject<Category>(Category::class.java, name)
         category.color = color
     }
 
@@ -74,6 +75,12 @@ fun addLoan(realm: Realm, amount: Int, remark: String, type: Boolean, actor: Str
         loan.returnDate = date
 
         val user = realm.where<User>(User::class.java).findFirst()!!
-
+        user.loans.add(loan)
     }
+}
+
+fun getExpenses(realm: Realm): RealmList<Expense> {
+    val user = realm.where<User>(User::class.java).findFirst()!!
+
+    return user.expenses
 }

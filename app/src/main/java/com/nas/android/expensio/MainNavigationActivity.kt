@@ -8,14 +8,15 @@ import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main_navigation.*
 import kotlinx.android.synthetic.main.content_main_navigation.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
-import model.createUser
-import model.getUser
+import model.*
+import java.util.*
 
 
 class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -41,7 +42,13 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         nav_view.setNavigationItemSelectedListener(this)
 
         // test more db
-
+        val realm = Realm.getDefaultInstance()
+        createUser(realm, "test")
+        getUser(realm, "test")
+        addCategory(realm, "test category", "#fff")
+        addExpense(realm, 50, "test expense", Date(), "test category")
+        var exp = getExpenses(realm)
+        Log.i("Realm query result", "exp - ${exp[0]?.amount} , ${exp[0]?.remarks} , ${exp[0]?.category}, ${exp[0]?.date}")
     }
 
     override fun onBackPressed() {

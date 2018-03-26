@@ -1,11 +1,12 @@
 package model
 
 import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
 
 /**
  * Created by surya on 3/26/18.
  */
 open class Category(
-        var name: String = "name",
+        @PrimaryKey var name: String = "name",
         var color: String = "hexcode"
 ) : RealmObject()
