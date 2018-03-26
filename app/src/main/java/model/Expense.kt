@@ -14,6 +14,6 @@ val BILLS = "bills"
 open class Expense(
         var amount: Int = 0,
         var remarks: String = "some remarks",
-        var category: String = GROCERY,
+        var category: Category = Category(),
         var date: Date = Date()
 ) : RealmObject()
