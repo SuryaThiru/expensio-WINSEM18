@@ -13,10 +13,11 @@ import kotlinx.android.synthetic.main.day_expense.view.*
 
 class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
 
-    val words = listOf<String>("i","dont","care","much","i","dont","care","much")
+    val reasons = listOf<String>("reason","reason","reason","reason")
+    val amount = listOf<String>("amount","amount","amount","amount")
     //number of items
     override fun getItemCount(): Int{
-        return words.size
+        return reasons.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomViewHolder {
@@ -26,8 +27,10 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder?, position: Int) {
-        val wordss = words.get(position)
-        holder?.view?.reason?.text = wordss
+        val amt = amount.get(position)
+        val res = reasons.get(position)
+        holder?.view?.amount?.text = amt
+        holder?.view?.reason?.text = res
 /*
         holder?.view?.reason?.text = wordss
 */

@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.category_list_cell.view.*
 
 class Category_list_adapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
 
-    val words = listOf<String>("someone","someone","someone","someone","someone","someone","someone","someone","someone")
+    val words = listOf<String>("category_name","category_name","category_name","category_name","category_name")
+
     //number of items
     override fun getItemCount(): Int{
         return words.size

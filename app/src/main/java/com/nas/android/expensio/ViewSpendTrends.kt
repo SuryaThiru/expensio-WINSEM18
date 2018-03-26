@@ -37,6 +37,7 @@ class ViewSpendTrends : AppCompatActivity() {
         colors.add(Color.GREEN)
         colors.add(Color.MAGENTA)
 
+
         dataSet.setColors(colors)
         val data = PieData(dataSet)
         pieChart.data = data

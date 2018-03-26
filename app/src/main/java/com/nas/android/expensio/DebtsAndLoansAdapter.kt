@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.debts_and_loans_list_cell.view.*
 
 class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
 
-    val words = listOf<String>("someone","someone","someone","someone","someone","someone","someone","someone","someone")
+    val words = listOf<String>("debtor or loaner","debtor or loaner","debtor or loaner","debtor or loaner","debtor or loaner")
+    val amount = listOf<String>("amount","amount","amount","amount","amount")
     //number of items
     override fun getItemCount(): Int{
         return words.size
@@ -27,7 +28,10 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
 
     override fun onBindViewHolder(holder: CustomDebtViewHolder?, position: Int) {
         val wordss = words.get(position)
+        val amt = amount.get(position)
         holder?.view?.debtor_or_loaner?.text = wordss
+        holder?.view?.amount_Debt_or_loan?.text = amt
+
 /*
         holder?.view?.reason?.text = wordss
 */
