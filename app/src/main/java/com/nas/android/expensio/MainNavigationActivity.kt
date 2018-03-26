@@ -9,8 +9,11 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main_navigation.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
+import model.createUser
+import model.getUser
 
 class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -30,6 +33,8 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        // test more db
 
     }
 

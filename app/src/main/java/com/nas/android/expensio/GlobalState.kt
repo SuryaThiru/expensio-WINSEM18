@@ -15,7 +15,6 @@ class GlobalState : Application() {
         // initialise database and config
         Realm.init(this)
 
-        val realm = Realm.getDefaultInstance()
         val config = RealmConfiguration.Builder().name("expenses.realm").build()
         Realm.setDefaultConfiguration(config)
 
