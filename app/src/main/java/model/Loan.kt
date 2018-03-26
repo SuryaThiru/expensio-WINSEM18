@@ -16,5 +16,6 @@ open class Loan(
         var remark: String = "some remark",
         var type: Boolean = DEBT,
         var actor: String = "some name", //name of the debtor (or) creditor
-        var returnDate: Date? = null  //null if it's a credit
-) : Realmbject()
+        var returnDate: Date? = Date() //null if it's a credit
+
+) : RealmObject()

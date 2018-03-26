@@ -7,13 +7,16 @@ import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main_navigation.*
+import kotlinx.android.synthetic.main.content_main_navigation.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
 import model.createUser
 import model.getUser
+
 
 class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -22,8 +25,11 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         setContentView(R.layout.activity_main_navigation)
         setSupportActionBar(toolbar)
 
+        main_recyclerview.layoutManager = LinearLayoutManager(this)
+        main_recyclerview.adapter = MainAdapter()
+
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "have to add  activity/fragment to add expense", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
