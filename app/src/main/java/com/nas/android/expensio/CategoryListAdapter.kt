@@ -1,23 +1,34 @@
 package com.nas.android.expensio
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import io.realm.Realm
 import kotlinx.android.synthetic.main.category_list_cell.view.*
+import model.getCategories
 
 
 /**
  * Created by Neha Bala on 20-03-2018.
  */
 
-class Category_list_adapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
+class CategoryListAdapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
 
-    val words = listOf<String>("category_name","category_name","category_name","category_name","category_name")
+    private val categories = ArrayList<String>()
+
+    fun getcategories() {
+        val realm = Realm.getDefaultInstance()
+        var results = getCategories(realm)
+        Log.i("Categories realm query", "$results")
+
+        for (res in results) categories.add(res.name)
+    }
 
     //number of items
     override fun getItemCount(): Int{
-        return words.size
+        return categories.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CustomCategoryViewHolder {
@@ -27,10 +38,10 @@ class Category_list_adapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CustomCategoryViewHolder?, position: Int) {
-        val wordss = words.get(position)
-        holder?.view?.category_name?.text = wordss
+        val category = categories.get(position)
+        holder?.view?.category_name?.text = category
 /*
-        holder?.view?.reason?.text = wordss
+        holder?.view?.reason?.text = categories
 */
     }
 }

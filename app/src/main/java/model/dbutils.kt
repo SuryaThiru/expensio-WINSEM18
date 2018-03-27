@@ -1,9 +1,9 @@
 package model
 
 import android.util.Log
-import com.nas.android.expensio.SetBudget
 import io.realm.Realm
 import io.realm.RealmList
+import io.realm.RealmResults
 import java.util.*
 
 /**
@@ -58,6 +58,9 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
 }
 
 fun addCategory(realm: Realm, name: String, color: String) {
+    /*
+    add new category will throw primary key error if same name is added
+     */
     realm.executeTransaction{ _ ->
         val category = realm.createObject<Category>(Category::class.java, name)
         category.color = color
@@ -84,3 +87,15 @@ fun getExpenses(realm: Realm): RealmList<Expense> {
 
     return user.expenses
 }
+
+fun getCategories(realm: Realm): RealmResults<Category> {
+
+    return realm.where(Category::class.java).findAll()!!
+}
+
+fun getLoans(realm: Realm): RealmList<Loan> {
+    val user = realm.where<User>(User::class.java).findFirst()!!
+
+    return user.loans
+}
+

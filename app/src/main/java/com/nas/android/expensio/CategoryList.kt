@@ -15,12 +15,12 @@ class CategoryList : AppCompatActivity() {
         setContentView(R.layout.activity_category_list)
 
         category_list_recyclerview.layoutManager = LinearLayoutManager(this)
-        category_list_recyclerview.adapter = Category_list_adapter()
+        category_list_recyclerview.adapter = CategoryListAdapter()
 
         fab_category_list.setOnClickListener {
             // Handler code here.
             val intent = Intent(applicationContext, AddCategory::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
     }
 }

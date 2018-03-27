@@ -43,12 +43,14 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
 
         // test more db
         val realm = Realm.getDefaultInstance()
-        createUser(realm, "test")
+//        createUser(realm, "test")
         getUser(realm, "test")
-        addCategory(realm, "test category", "#fff")
-        addExpense(realm, 50, "test expense", Date(), "test category")
+//        addCategory(realm, "test category", "#fff")
+//        addExpense(realm, 50, "test expense", Date(), "test category")
         var exp = getExpenses(realm)
         Log.i("Realm query result", "exp - ${exp[0]?.amount} , ${exp[0]?.remarks} , ${exp[0]?.category}, ${exp[0]?.date}")
+        var cat = getCategories(realm)
+        Log.i("Realm query result", "category - $cat")
     }
 
     override fun onBackPressed() {
