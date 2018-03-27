@@ -18,6 +18,10 @@ class CategoryListAdapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
 
     private val categories = ArrayList<String>()
 
+    init {
+        getcategories()
+    }
+
     fun getcategories() {
         val realm = Realm.getDefaultInstance()
         var results = getCategories(realm)
@@ -38,7 +42,7 @@ class CategoryListAdapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CustomCategoryViewHolder?, position: Int) {
-        val category = categories.get(position)
+        val category = categories[position]
         holder?.view?.category_name?.text = category
 /*
         holder?.view?.reason?.text = categories
