@@ -44,7 +44,7 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
 
         // test more db
 //        val realm = Realm.getDefaultInstance()
-//        createUser(realm, "test")
+//        createUser(realm, "developer")
 //        getUser(realm, "test")
 //        addCategory(realm, "test category", "#fff")
 //        addExpense(realm, 500, "spend em all", Date(), "name")

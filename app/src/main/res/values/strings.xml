@@ -30,4 +30,7 @@
     <string name="color">Color</string>
     <string name="priority">Priority</string>
     <string name="add_new_cat">Add a new category</string>
+
+    <!--error messages-->
+    <string name="no_expenses">No expenses added yet!</string>
 </resources>

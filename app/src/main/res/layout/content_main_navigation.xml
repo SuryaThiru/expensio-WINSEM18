@@ -8,6 +8,15 @@
     tools:context="com.nas.android.expensio.MainNavigationActivity"
     tools:showIn="@layout/app_bar_main_navigation">
 
+    <TextView
+        android:id="@+id/hidden_expense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/no_expenses"
+        android:visibility="invisible"
+        />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/main_recyclerview"
         android:layout_width="match_parent"
