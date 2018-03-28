@@ -25,18 +25,18 @@
             android:id="@+id/mar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/set_your_budget"
+            android:layout_marginBottom="8dp"
+            android:text="Add an expense"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:textStyle="bold" />
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_budget_amount"
+            android:id="@+id/input_expense_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/input_budget_amount"
+                android:id="@+id/input_expense_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
@@ -49,34 +49,31 @@
             android:orientation="horizontal">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_from_date"
+                android:id="@+id/input_expense_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
                 <EditText
-                    android:id="@+id/input_from_date"
+                    android:id="@+id/input_expense_reason"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:hint="@string/from_date"
+                    android:hint="Reason"
                     android:inputType="date" />
 
 
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/pick_date_from"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|center"
-                android:layout_margin="@dimen/fab_margin"
-                app:srcCompat="@drawable/ic_calendar"
-                app:rippleColor="@color/colorPrimaryDark"
-                android:clickable="true"
-                />
 
 
         </LinearLayout>
+
+        <Spinner
+            android:id="@+id/planets_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="16dp"
+             />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -84,22 +81,23 @@
             android:orientation="horizontal">
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_to_date"
+                android:id="@+id/input_expense_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">
-
                 <EditText
-                    android:id="@+id/input_to_date"
+                    android:id="@+id/input_expense_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:hint="@string/to_date" />
+                    android:layout_weight="1"
+                    android:hint="Date"
+                    android:inputType="date" />
+
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/pick_date_to"
+                android:id="@+id/pick_date_of_expense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
@@ -110,19 +108,12 @@
                 />
 
 
-
-
         </LinearLayout>
-
-
-
-
-
 
 
     </LinearLayout>
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_budget"
+        android:id="@+id/fab_add_expense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
@@ -134,10 +125,10 @@
 
 </android.support.design.widget.CoordinatorLayout>
 
-<!--
+    <!--
 
-<Button
-android:id="@+id/pick_date"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:text="Pick date"/>-->
+    <Button
+    android:id="@+id/pick_date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Pick date"/>-->

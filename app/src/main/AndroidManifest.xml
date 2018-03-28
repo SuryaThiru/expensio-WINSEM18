@@ -3,10 +3,10 @@
     package="com.nas.android.expensio">
 
     <application
+        android:name=".GlobalState"
         android:allowBackup="true"
         android:icon="@mipmap/launcher_logo_round"
         android:label="@string/app_name"
-        android:name="GlobalState"
         android:roundIcon="@mipmap/launcher_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -37,7 +37,8 @@
             android:label="@string/view_spend_trends" />
         <activity android:name=".AddDebtOrLoan" />
         <activity android:name=".CategoryList" />
-        <activity android:name=".BudgetList"></activity>
+        <activity android:name=".BudgetList" />
+        <activity android:name=".AddExpense"></activity>
     </application>
 
 </manifest>
