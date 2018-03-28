@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_add_debt_or_loan.*
 import model.DEBT
 import model.LOAN
 import model.addLoan
-import java.text.SimpleDateFormat
 import java.util.*
 
 class AddDebtOrLoan : AppCompatActivity() {
