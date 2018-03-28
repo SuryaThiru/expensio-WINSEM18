@@ -18,6 +18,9 @@ class GlobalState : Application() {
         val config = RealmConfiguration.Builder().name("expenses.realm").build()
         Realm.setDefaultConfiguration(config)
 
+        if(BuildConfig.DEBUG)
+            this.getExternalFilesDir(null)
+
         Log.i("Realm init", "db stored in " + this.filesDir)
     }
 }

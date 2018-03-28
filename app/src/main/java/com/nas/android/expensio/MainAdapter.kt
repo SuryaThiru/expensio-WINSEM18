@@ -1,9 +1,11 @@
 package com.nas.android.expensio
 
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.nas.android.expensio.R.id.hidden_expense
 import io.realm.Realm
 import kotlinx.android.synthetic.main.day_expense.view.*
 import model.getExpenses
@@ -20,10 +22,15 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
     val category = ArrayList<String>()
 
     init {
-        getexpenses()
+        try{
+            getexpenses()
+        } catch (e: NullPointerException) {
+            Log.w("Exception main adapter", "No expenses found")
+            // TODO empty expenses
+        }
     }
 
-    fun getexpenses() {
+    private fun getexpenses() {
         val realm = Realm.getDefaultInstance()
         val results = getExpenses(realm)
 

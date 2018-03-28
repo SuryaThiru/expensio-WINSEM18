@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
-                android:id="@+id/debt_or_loan"
+                android:id="@+id/loans_image"
                 android:layout_width="81dp"
                 android:layout_height="76dp"
                 android:layout_marginBottom="8dp"
@@ -29,24 +29,40 @@
                 app:srcCompat="@mipmap/ic_launcher_foreground" />
 
             <TextView
-                android:id="@+id/amount_Debt_or_loan"
+                android:id="@+id/loans_actor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="amount"
                 android:textAlignment="center"
                 android:layout_weight="1"
                 />
 
             <TextView
-                android:id="@+id/debtor_or_loaner"
+                android:id="@+id/loans_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="reason"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textAlignment="center"
                  />
+
+            <TextView
+                android:id="@+id/loans_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                />
+
+            <TextView
+                android:id="@+id/loans_remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:textAlignment="center"
+                />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

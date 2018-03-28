@@ -43,15 +43,15 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         nav_view.setNavigationItemSelectedListener(this)
 
         // test more db
-        val realm = Realm.getDefaultInstance()
-        createUser(realm, "test")
-        getUser(realm, "test")
-        addCategory(realm, "test category", "#fff")
-        addExpense(realm, 500, "spend em all", Date(), "name")
-        var exp = getExpenses(realm)
-        Log.i("Realm query result", "exp - ${exp[0]?.amount} , ${exp[0]?.remarks} , ${exp[0]?.category}, ${exp[0]?.date}")
-        var cat = getCategories(realm)
-        Log.i("Realm query result", "category - $cat")
+//        val realm = Realm.getDefaultInstance()
+//        createUser(realm, "developer")
+//        getUser(realm, "test")
+//        addCategory(realm, "test category", "#fff")
+//        addExpense(realm, 500, "spend em all", Date(), "name")
+//        var exp = getExpenses(realm)
+//        Log.i("Realm query result", "exp - ${exp[0]?.amount} , ${exp[0]?.remarks} , ${exp[0]?.category}, ${exp[0]?.date}")
+//        var cat = getCategories(realm)
+//        Log.i("Realm query result", "category - $cat")
     }
 
     override fun onBackPressed() {
