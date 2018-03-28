@@ -38,7 +38,8 @@
         <activity android:name=".AddDebtOrLoan" />
         <activity android:name=".CategoryList" />
         <activity android:name=".BudgetList" />
-        <activity android:name=".AddExpense"></activity>
+        <activity android:name=".AddExpense" />
+        <activity android:name=".NewUserDetail"></activity>
     </application>
 
 </manifest>

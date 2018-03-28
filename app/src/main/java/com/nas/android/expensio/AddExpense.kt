@@ -21,7 +21,7 @@ class AddExpense : AppCompatActivity() {
 
         fab_add_expense.setOnClickListener{
 
-            //this adds the expense to db (or whatever :p)
+            //this adds the expense to db (or whatever)
         }
 
 // Create an ArrayAdapter using the string array and a default spinner layout
