@@ -37,6 +37,23 @@ tools:context="com.nas.android.expensio.MainNavigationActivity">
                 android:hint="@string/amount" />
         </android.support.design.widget.TextInputLayout>
 
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/loan_radio"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_loan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="loan"
+                />
+            <RadioButton android:id="@+id/radio_debt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="debt"
+                />
+        </RadioGroup>
+
         <android.support.design.widget.TextInputLayout
             android:id="@+id/loans_actor"
             android:layout_width="match_parent"
