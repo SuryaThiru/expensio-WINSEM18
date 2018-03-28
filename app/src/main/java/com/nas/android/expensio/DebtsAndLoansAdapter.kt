@@ -9,6 +9,7 @@ import io.realm.Realm
 import kotlinx.android.synthetic.main.debts_and_loans_list_cell.view.*
 import model.getExpenses
 import model.getLoans
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -21,7 +22,7 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
     val actor = ArrayList<String>()
     val amount = ArrayList<String>()
     val remark = ArrayList<String>()
-    val date = ArrayList<String>()
+    val date = ArrayList<Date?>()
 
     init {
         try {
@@ -39,7 +40,7 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
             actor.add(res.actor)
             amount.add(res.amount.toString())
             remark.add(res.remark)
-            date.add(res.returnDate.toString())
+            date.add(res.returnDate)
         }
     }
 
@@ -59,11 +60,14 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
         val amount = amount[position]
         val rem = remark[position]
         val date = date[position]
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+
+
 
         holder?.view?.loans_actor?.text = actor
         holder?.view?.loans_amount?.text = amount
         holder?.view?.loans_remarks?.text = rem
-        holder?.view?.loans_date?.text = date
+        holder?.view?.loans_date?.text = dateFormat.format(date)
     }
 }
 

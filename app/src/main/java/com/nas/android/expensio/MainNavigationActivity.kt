@@ -30,7 +30,7 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         main_recyclerview.layoutManager = LinearLayoutManager(this)
         main_recyclerview.adapter = MainAdapter()
 
-        fab.setOnClickListener { view ->
+        fab_main.setOnClickListener { view ->
             Snackbar.make(view, "have to add  activity/fragment to add expense", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
