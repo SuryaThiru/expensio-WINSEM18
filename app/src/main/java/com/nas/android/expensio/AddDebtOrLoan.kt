@@ -19,7 +19,7 @@ class AddDebtOrLoan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_debt_or_loan)
 
-        fab.setOnClickListener { view: View ->
+        fab_add_debt_loan.setOnClickListener { view: View ->
             Snackbar.make(view, "Detail Added", Snackbar.LENGTH_LONG)
                     .setAction("Action", {
                         val amnt = inp_loan_amnt.text.toString().toInt()
