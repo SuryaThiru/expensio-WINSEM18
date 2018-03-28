@@ -19,7 +19,7 @@ tools:context="com.nas.android.expensio.MainNavigationActivity">
             android:id="@+id/loans_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_new_cat"
+            android:text="@string/loan_title"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp"/>
@@ -34,7 +34,8 @@ tools:context="com.nas.android.expensio.MainNavigationActivity">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
-                android:hint="@string/amount" />
+                android:hint="@string/amount"
+                android:inputType="number"/>
         </android.support.design.widget.TextInputLayout>
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"

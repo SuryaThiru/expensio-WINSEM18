@@ -12,7 +12,7 @@ class SetBudget : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_set_budget)
 
-        fab.setOnClickListener { view ->
+        fab_budget.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                     .setAction("Action", null).show()
         }
