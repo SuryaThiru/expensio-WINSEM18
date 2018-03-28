@@ -14,8 +14,8 @@ class AddExpense : AppCompatActivity() {
         setContentView(R.layout.activity_add_expense)
 
         pick_date_of_expense.setOnClickListener{
-            val newFragment = DatePickerFragment()
             // Show the date picker dialog
+            val newFragment = DatePickerFragment()
             newFragment.show(fragmentManager, "Date Picker")
         }
 
