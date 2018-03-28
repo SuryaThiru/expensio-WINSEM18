@@ -33,4 +33,13 @@
 
     <!--error messages-->
     <string name="no_expenses">No expenses added yet!</string>
+
+    <!--input hints-->
+    <string name="amount">Enter amount of loan</string>
+    <string name="actor">Enter debiter or crediter</string>
+    <string name="remark">Enter comments</string>
+
+    <!--titles-->
+    <string name="loan_title">Add a loan or debt</string>
+
 </resources>

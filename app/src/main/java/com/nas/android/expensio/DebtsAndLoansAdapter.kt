@@ -55,18 +55,18 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CustomDebtViewHolder?, position: Int) {
-        // TODO bind with loans view
-        val amount = amount.get(position)
-        val amt = amount.get(position)
-        holder?.view?.debtor_or_loaner?.text = wordss
-        holder?.view?.amount_Debt_or_loan?.text = amt
+        val actor = actor[position]
+        val amount = amount[position]
+        val rem = remark[position]
+        val date = date[position]
 
-/*
-        holder?.view?.reason?.text = wordss
-*/
+        holder?.view?.loans_actor?.text = actor
+        holder?.view?.loans_amount?.text = amount
+        holder?.view?.loans_remarks?.text = rem
+        holder?.view?.loans_date?.text = date
     }
 }
 
-class CustomDebtViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+class CustomDebtViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
 }

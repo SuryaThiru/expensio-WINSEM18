@@ -20,7 +20,7 @@ class DebtsAndLoansList : AppCompatActivity() {
         fab1.setOnClickListener {
             // Handler code here.
             val intent = Intent(applicationContext, AddDebtOrLoan::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
     }
 }
