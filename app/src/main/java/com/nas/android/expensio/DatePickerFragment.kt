@@ -6,14 +6,9 @@ import android.app.Dialog
 import android.app.DialogFragment
 import android.os.Bundle
 import android.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.util.Log
 import android.widget.DatePicker
-import android.widget.TextView
-import java.text.DateFormat
 import java.util.*
-import java.util.Calendar
 
 
 /**
@@ -21,6 +16,7 @@ import java.util.Calendar
  */
 class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
     private lateinit var calendar:Calendar
+
 
      override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -36,6 +32,8 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
          //To change body of created functions use File | Settings | File Templates.
+
+        Log.i("test ondateset ", dayOfMonth.toString())
     }
 
 
