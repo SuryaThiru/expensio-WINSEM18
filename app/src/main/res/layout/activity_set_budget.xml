@@ -43,26 +43,20 @@
                 android:inputType="numberDecimal"
                 android:hint="@string/hint_amount" />
         </android.support.design.widget.TextInputLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            >
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_from_date"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <EditText
-                    android:id="@+id/input_from_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="@string/from_date"
-                    android:inputType="date" />
-
-
-            </android.support.design.widget.TextInputLayout>
+                android:text="From"
+                android:layout_weight="1"
+                />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/pick_date_from"
@@ -73,30 +67,15 @@
                 app:srcCompat="@drawable/ic_calendar"
                 app:rippleColor="@color/colorPrimaryDark"
                 android:clickable="true"
+                android:layout_weight="1"
                 />
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_layout_to_date"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <EditText
-                    android:id="@+id/input_to_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="date"
-                    android:hint="@string/to_date" />
-
-            </android.support.design.widget.TextInputLayout>
+                android:text="To"
+                android:layout_weight="1"
+                />
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/pick_date_to"
@@ -107,10 +86,8 @@
                 app:srcCompat="@drawable/ic_calendar"
                 app:rippleColor="@color/colorPrimaryDark"
                 android:clickable="true"
+                android:layout_weight="1"
                 />
-
-
-
 
         </LinearLayout>
 

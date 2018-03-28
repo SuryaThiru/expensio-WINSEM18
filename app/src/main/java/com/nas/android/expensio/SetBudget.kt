@@ -23,6 +23,7 @@ class SetBudget : AppCompatActivity() {
             newFragment.show(fragmentManager, "Date Picker")
 
         }
+
         pick_date_to.setOnClickListener {
             val newFragment = DatePickerFragment()
             // Show the date picker dialog
