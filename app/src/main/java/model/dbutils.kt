@@ -17,14 +17,17 @@ fun createUser(realm: Realm, name: String) {
     }
 }
 
-fun getUser(realm: Realm, name: String) {
+fun getUser(realm: Realm): String? {
     // function for testing purposes
-    val user = realm.where<User>(User::class.java).equalTo("name", name).findFirst()!!
+    val user = realm.where<User>(User::class.java).findFirst()
 
-    if (user != null)
+    return if (user != null) {
         Log.i("Realm query", "found user: ${user.name}")
-    else
+        user.name
+    } else {
         Log.e("Realm query", "User not found")
+        null
+    }
 }
 
 fun setUserBudget(realm: Realm, budget: Int, dateFrom: Date = Date(), dateTo: Date = Date()) {
