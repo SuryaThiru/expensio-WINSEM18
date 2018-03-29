@@ -8,13 +8,14 @@ import android.os.Bundle
 import android.app.Fragment
 import android.util.Log
 import android.widget.DatePicker
+import java.text.DateFormat
 import java.util.*
 
 
 /**
  * A simple [Fragment] subclass.
  */
-class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener {
+class DatePickerFragment(var date: Date? = null) : DialogFragment(), DatePickerDialog.OnDateSetListener {
     private lateinit var calendar:Calendar
 
 
@@ -32,13 +33,14 @@ class DatePickerFragment : DialogFragment(), DatePickerDialog.OnDateSetListener 
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
          //To change body of created functions use File | Settings | File Templates.
+        date?.year = year
+        date?.month = month
+        date?.date = dayOfMonth
 
         Log.i("test ondateset ", dayOfMonth.toString())
     }
 
-
-
-    public fun formatDate(year:Int, month:Int, day:Int):String{
+    fun formatDate(year:Int, month:Int, day:Int):String{
         // Create a Date variable/object with user chosen date
         calendar.set(year, month, day, 0, 0, 0)
         val chosenDate = calendar.time

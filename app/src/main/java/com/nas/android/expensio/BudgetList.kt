@@ -15,7 +15,7 @@ class BudgetList : AppCompatActivity() {
         fab_budget_list.setOnClickListener {
             // Handler code here.
             val intent = Intent(applicationContext, SetBudget::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
     }
 }

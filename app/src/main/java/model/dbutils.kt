@@ -27,12 +27,13 @@ fun getUser(realm: Realm, name: String) {
         Log.e("Realm query", "User not found")
 }
 
-fun setUserBudget(realm: Realm, budget: Int, date: Date = Date()) {
+fun setUserBudget(realm: Realm, budget: Int, dateFrom: Date = Date(), dateTo: Date = Date()) {
     val user = realm.where<User>(User::class.java).findFirst()!!
 
     realm.executeTransaction { _ ->
         user.budget = budget
-        user.budgetStartDate = date
+        user.budgetStartDate = dateFrom
+        user.budgetEndDate = dateTo
     }
 }
 
