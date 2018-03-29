@@ -16,8 +16,6 @@ import java.util.*
  * A simple [Fragment] subclass.
  */
 class DatePickerFragment(var date: Date? = null) : DialogFragment(), DatePickerDialog.OnDateSetListener {
-    private lateinit var calendar:Calendar
-
 
      override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
@@ -38,16 +36,6 @@ class DatePickerFragment(var date: Date? = null) : DialogFragment(), DatePickerD
         date?.date = dayOfMonth
 
         Log.i("test ondateset ", dayOfMonth.toString())
-    }
-
-    fun formatDate(year:Int, month:Int, day:Int):String{
-        // Create a Date variable/object with user chosen date
-        calendar.set(year, month, day, 0, 0, 0)
-        val chosenDate = calendar.time
-
-        // Format the date picker selected date
-        val df = DateFormat.getDateInstance(DateFormat.MEDIUM)
-        return df.format(chosenDate)
     }
 
 }// Required empty public constructor

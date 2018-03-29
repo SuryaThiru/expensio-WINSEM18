@@ -32,7 +32,7 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
 
         fab_main.setOnClickListener {
             val intent = Intent(applicationContext, AddExpense::class.java)
-            startActivity(intent);
+            startActivity(intent)
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -41,6 +41,13 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        // test new user
+        val realm = Realm.getDefaultInstance()
+        if (getUser(realm) == null) {
+            val newUserFragment = NewUserFragment()
+            newUserFragment.show(supportFragmentManager, "Enter user name")
+        }
 
         // test more db
 //        val realm = Realm.getDefaultInstance()
