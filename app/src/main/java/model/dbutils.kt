@@ -51,14 +51,15 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
     val user = realm.where<User>(User::class.java).findFirst()!!
 
     realm.executeTransaction { _ ->
-        val expense = realm.createObject<Expense>(Expense::class.java)
+//        val expense = realm.createObject<Expense>(Expense::class.java)
+        val expense = Expense()
         expense.amount = amount
         expense.remarks = remarks
         expense.date = date
         expense.category = category
 
         user.expenses.add(expense)
-
+        
         Log.i("add expense", "added new expense")
     }
 }

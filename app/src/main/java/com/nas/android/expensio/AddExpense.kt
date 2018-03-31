@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_add_expense.*
 import kotlinx.android.synthetic.main.activity_set_budget.*
@@ -40,8 +41,12 @@ class AddExpense : AppCompatActivity() {
                 category = input_expense_category.selectedItem.toString()
 
                 addExpense(realm, amnt, reason, date, category)
+
+                Toast.makeText(this, "Added new expense", Toast.LENGTH_SHORT).show()
             } catch (err: Exception) {
                 Log.e("Set expense", "probably your input form is empty")
+
+                Toast.makeText(this, "Your input form is empty", Toast.LENGTH_SHORT).show()
             }
 
         }

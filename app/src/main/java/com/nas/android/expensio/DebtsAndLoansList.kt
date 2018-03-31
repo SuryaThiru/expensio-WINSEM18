@@ -23,4 +23,11 @@ class DebtsAndLoansList : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        debts_and_loans_recyclerview.layoutManager = LinearLayoutManager(this)
+        debts_and_loans_recyclerview.adapter = DebtsAndLoansAdapter()
+    }
 }

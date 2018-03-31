@@ -61,6 +61,14 @@ class MainNavigationActivity : AppCompatActivity(), NavigationView.OnNavigationI
 //        Log.i("Realm query result", "category - $cat")
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        Log.d("Main activity", "on resume triggered")
+        main_recyclerview.layoutManager = LinearLayoutManager(this)
+        main_recyclerview.adapter = MainAdapter()
+    }
+
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
             drawer_layout.closeDrawer(GravityCompat.START)

@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.util.Log
+import android.widget.Toast
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_set_budget.*
 import kotlinx.android.synthetic.main.app_bar_main_navigation.*
@@ -24,6 +25,7 @@ class SetBudget : AppCompatActivity() {
                 amnt = input_budget_amount.text.toString().toInt()
             } catch (e: Exception) {
                 Log.e("Set budget", "probably your input form is empty")
+                Toast.makeText(this, "Your input form is empty", Toast.LENGTH_SHORT).show()
             }
 
             if (amnt != 0) {
@@ -32,6 +34,8 @@ class SetBudget : AppCompatActivity() {
             }
 
             Log.i("Set budget", "added new budget")
+
+            Toast.makeText(this, "Added new expense", Toast.LENGTH_SHORT).show()
         }
 
         pick_date_from.setOnClickListener {

@@ -23,4 +23,11 @@ class CategoryList : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        category_list_recyclerview.layoutManager = LinearLayoutManager(this)
+        category_list_recyclerview.adapter = CategoryListAdapter()
+    }
 }
