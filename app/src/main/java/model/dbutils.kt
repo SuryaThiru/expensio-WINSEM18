@@ -58,6 +58,8 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
         expense.category = category
 
         user.expenses.add(expense)
+
+        Log.i("add expense", "added new expense")
     }
 }
 

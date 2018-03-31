@@ -5,10 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.nas.android.expensio.R.id.hidden_expense
 import io.realm.Realm
 import kotlinx.android.synthetic.main.day_expense.view.*
 import model.getExpenses
+import java.util.*
 
 
 /**
@@ -20,13 +20,13 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
     val reasons = ArrayList<String>()
     val amount = ArrayList<String>()
     val category = ArrayList<String>()
+    val date = ArrayList<Date>()
 
     init {
         try{
             getexpenses()
         } catch (e: NullPointerException) {
             Log.w("Exception main adapter", "No expenses found")
-            // TODO empty expenses
         }
     }
 
@@ -38,6 +38,7 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
             reasons.add(res.remarks)
             amount.add(res.amount.toString())
             category.add(res.category!!.name)
+            date.add(res.date)
         }
     }
 
@@ -56,12 +57,10 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
         val amt = amount.get(position)
         val res = reasons.get(position)
         val cat = category.get(position)
+        val date = category.get(position)
         holder?.view?.amount?.text = amt
         holder?.view?.reason?.text = res
         holder?.view?.category?.text = cat
-/*
-        holder?.view?.reason?.text = wordss
-*/
     }
 }
 

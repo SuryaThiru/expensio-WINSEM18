@@ -36,12 +36,12 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/input_expense_amount"
+                android:id="@+id/input_expense_amnt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:inputType="numberDecimal"
-                android:hint="@string/hint_amount" />
+                android:hint="Enter expense amount" />
         </android.support.design.widget.TextInputLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,17 +59,15 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:hint="Reason"
-                    android:inputType="date" />
+                    android:singleLine="true"/>
 
 
             </android.support.design.widget.TextInputLayout>
 
-
-
         </LinearLayout>
 
         <Spinner
-            android:id="@+id/planets_spinner"
+            android:id="@+id/input_expense_category"
             android:layout_width="fill_parent"
             android:layout_height="47dp"
             android:layout_marginTop="16dp"
@@ -80,21 +78,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/input_expense_3"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <EditText
-                    android:id="@+id/input_expense_date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:hint="Date"
-                    android:inputType="date" />
+                android:layout_weight="1"
+                android:text="Date"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="2dp"
+                android:textSize="16sp"/>
 
-
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.FloatingActionButton
                 android:id="@+id/pick_date_of_expense"
@@ -102,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_margin="@dimen/fab_margin"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/ic_calendar"
                 app:rippleColor="@color/colorPrimaryDark"
                 android:clickable="true"

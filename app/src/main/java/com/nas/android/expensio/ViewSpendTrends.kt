@@ -3,12 +3,10 @@ package com.nas.android.expensio
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import kotlinx.android.synthetic.main.activity_view_spend_trends.*
-import kotlinx.android.synthetic.main.app_bar_main_navigation.*
 
 class ViewSpendTrends : AppCompatActivity() {
 

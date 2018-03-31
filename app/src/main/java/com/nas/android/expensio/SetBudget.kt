@@ -19,7 +19,7 @@ class SetBudget : AppCompatActivity() {
         setContentView(R.layout.activity_set_budget)
 
         fab_budget.setOnClickListener{
-            var amnt: Int = 0
+            var amnt = 0
             try {
                 amnt = input_budget_amount.text.toString().toInt()
             } catch (e: Exception) {
