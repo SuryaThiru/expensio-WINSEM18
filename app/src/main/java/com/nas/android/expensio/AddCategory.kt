@@ -24,13 +24,8 @@ class AddCategory : AppCompatActivity() {
             addCategory(realm, name, color)
 
             Log.i("Realm write", "added new category")
-
-            input_name.setText("")
-            input_color.setText("")
-
             Toast.makeText(this, "Added new category", Toast.LENGTH_SHORT).show()
+            finish()
         }
-
-
     }
 }

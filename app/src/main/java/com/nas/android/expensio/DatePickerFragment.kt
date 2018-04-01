@@ -31,11 +31,12 @@ class DatePickerFragment(var date: Date? = null) : DialogFragment(), DatePickerD
 
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
          //To change body of created functions use File | Settings | File Templates.
+        
         date?.year = year
         date?.month = month
         date?.date = dayOfMonth
 
-        Log.i("test ondateset ", dayOfMonth.toString())
+        Log.i("test ondateset ", dayOfMonth.toString() + " " + year.toString())
     }
 
 }// Required empty public constructor

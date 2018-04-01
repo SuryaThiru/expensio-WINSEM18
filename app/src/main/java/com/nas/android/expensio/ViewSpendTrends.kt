@@ -7,6 +7,8 @@ import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import kotlinx.android.synthetic.main.activity_view_spend_trends.*
+import model.getTotalExpense
+import java.util.*
 
 class ViewSpendTrends : AppCompatActivity() {
 
@@ -14,8 +16,9 @@ class ViewSpendTrends : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_spend_trends)
 
-        setUpPieChartData()
+        getTotalExpense(Date(2018, 4, 1), Date(2018 ,4, 3))
 
+        setUpPieChartData()
     }
 
     private fun setUpPieChartData() {

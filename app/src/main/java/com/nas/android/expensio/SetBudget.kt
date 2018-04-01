@@ -31,11 +31,11 @@ class SetBudget : AppCompatActivity() {
             if (amnt != 0) {
                 val realm = Realm.getDefaultInstance()
                 setUserBudget(realm, amnt, from, to)
+
+                Log.i("Set budget", "added new budget")
+                Toast.makeText(this, "Added new budget", Toast.LENGTH_SHORT).show()
+                finish()
             }
-
-            Log.i("Set budget", "added new budget")
-
-            Toast.makeText(this, "Added new expense", Toast.LENGTH_SHORT).show()
         }
 
         pick_date_from.setOnClickListener {

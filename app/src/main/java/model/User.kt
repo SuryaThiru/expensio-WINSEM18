@@ -11,8 +11,8 @@ import java.util.*
 open class User(
         @PrimaryKey var name: String = "John Doe",
         var budget: Int = 0,
-        var budgetStartDate: Date = Date(),
-        var budgetEndDate: Date = Date(),
+        var budgetStartDate: Date? = null,
+        var budgetEndDate: Date? = null,
         var expenses: RealmList<Expense> = RealmList(), // fancy one-to-many definitions
         var loans: RealmList<Loan> = RealmList()
 ) : RealmObject()

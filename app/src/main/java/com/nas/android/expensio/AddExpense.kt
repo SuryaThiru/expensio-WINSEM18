@@ -40,9 +40,12 @@ class AddExpense : AppCompatActivity() {
                 reason = input_expense_reason.text.toString()
                 category = input_expense_category.selectedItem.toString()
 
+                Log.d("Add expense", "date: $date")
+
                 addExpense(realm, amnt, reason, date, category)
 
                 Toast.makeText(this, "Added new expense", Toast.LENGTH_SHORT).show()
+                finish()
             } catch (err: Exception) {
                 Log.e("Set expense", "probably your input form is empty")
 
