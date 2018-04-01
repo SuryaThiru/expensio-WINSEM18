@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import io.realm.Realm
 import kotlinx.android.synthetic.main.day_expense.view.*
 import model.getExpenses
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -57,10 +58,13 @@ class MainAdapter: RecyclerView.Adapter<CustomViewHolder>(){
         val amt = amount.get(position)
         val res = reasons.get(position)
         val cat = category.get(position)
-        val date = category.get(position)
+        val date = date.get(position)
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+
         holder?.view?.amount?.text = amt
         holder?.view?.reason?.text = res
         holder?.view?.category?.text = cat
+        holder?.view?.expense_date?.text = dateFormat.format(date)
     }
 }
 
