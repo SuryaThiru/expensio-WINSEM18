@@ -4,6 +4,7 @@ import android.util.Log
 import io.realm.Realm
 import io.realm.RealmList
 import io.realm.RealmResults
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -170,4 +171,54 @@ fun getTotalExpense(from: Date? = null, to: Date? = null) {
                 .lessThanOrEqualTo("date", to).findAll()!!.sum("amount")
         Log.d("total expenses", sum.toString())
     }
+}
+
+fun getTotalByCategory(from: Date? = null, to: Date? = null): MutableMap<String, Int> {
+    val expense = getExpenses(Realm.getDefaultInstance())
+    var output: MutableMap<String, Int> = mutableMapOf()
+    var sum: Int = 0
+
+    if (from == null || to == null) {
+        var res = expense.groupBy { exp -> exp.category }
+
+        for ((key, value) in res) {
+            if (key != null) {
+                sum = 0
+
+                for (v in value) {
+                    sum += v.amount
+                }
+
+                output[key.name] = sum
+            }
+        }
+    }
+
+    Log.d("Total expense", output.toString())
+    return output
+}
+
+fun getTotalByDate(from: Date? = null, to: Date? = null): MutableMap<String, Int> {
+    val expense = getExpenses(Realm.getDefaultInstance())
+    val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+    var output: MutableMap<String, Int> = mutableMapOf()
+    var sum: Int = 0
+
+    if (from == null || to == null) {
+        var res = expense.groupBy { exp -> exp.date }
+
+        for ((key, value) in res) {
+            if (key != null) {
+                sum = 0
+
+                for (v in value) {
+                    sum += v.amount
+                }
+
+                output[dateFormat.format(key)] = sum
+            }
+        }
+    }
+
+    return output
 }
