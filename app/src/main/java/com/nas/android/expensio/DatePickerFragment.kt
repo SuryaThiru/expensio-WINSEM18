@@ -32,7 +32,7 @@ class DatePickerFragment(var date: Date? = null) : DialogFragment(), DatePickerD
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
          //To change body of created functions use File | Settings | File Templates.
         
-        date?.year = year
+        date?.year = year - 1900
         date?.month = month
         date?.date = dayOfMonth
 
