@@ -35,11 +35,18 @@
         <activity
             android:name=".ViewSpendTrends"
             android:label="@string/view_spend_trends" />
-        <activity android:name=".AddDebtOrLoan" />
-        <activity android:name=".CategoryList" />
-        <activity android:name=".BudgetList" />
-        <activity android:name=".AddExpense" />
-        <activity android:name=".NewUserDetail"></activity>
+        <activity android:name=".AddDebtOrLoan"
+            android:label="@string/Add_debt_loan"
+            />
+        <activity android:name=".CategoryList"
+            android:label="@string/Category_list"
+            />
+        <activity android:name=".BudgetList"
+            android:label="@string/Budget_list"
+            />
+        <activity android:name=".AddExpense"
+            android:label="@string/Add_expense"
+            />
     </application>
 
 </manifest>

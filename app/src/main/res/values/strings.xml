@@ -54,5 +54,10 @@
 
     </string-array>
 
+    <string name="Category_list">Category list</string>
+    <string name="Add_debt_loan">Add a debt or loan</string>
+    <string name="Budget_list">Current Budget</string>
+    <string name="Add_expense">Add expense</string>
+
 
 </resources>

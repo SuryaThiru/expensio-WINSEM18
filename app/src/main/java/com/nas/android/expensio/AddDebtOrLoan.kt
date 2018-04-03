@@ -26,6 +26,7 @@ class AddDebtOrLoan : AppCompatActivity() {
             val opt = if (loan_radio.checkedRadioButtonId == 0) LOAN else DEBT
             // TODO get date
 
+
             val realm = Realm.getDefaultInstance()
             addLoan(realm, amnt, rem, opt, actor, Date())
 
