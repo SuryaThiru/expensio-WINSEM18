@@ -29,7 +29,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
             <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab_delete_expense"
+                android:id="@+id/fab_delete_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"

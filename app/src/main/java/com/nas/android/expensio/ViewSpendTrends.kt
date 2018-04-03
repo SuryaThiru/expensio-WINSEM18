@@ -7,7 +7,6 @@ import com.github.mikephil.charting.data.*
 import kotlinx.android.synthetic.main.activity_view_spend_trends.*
 import model.getTotalByCategory
 import model.getTotalByDate
-import java.util.*
 import kotlin.collections.ArrayList
 
 class ViewSpendTrends : AppCompatActivity() {

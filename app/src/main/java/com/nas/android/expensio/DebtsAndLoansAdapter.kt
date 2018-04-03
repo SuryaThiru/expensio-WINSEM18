@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import io.realm.Realm
 import kotlinx.android.synthetic.main.debts_and_loans_list_cell.view.*
-import model.getExpenses
+import model.deleteLoan
 import model.getLoans
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,12 +62,31 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
         val date = date[position]
         val dateFormat = SimpleDateFormat("dd/MM/yyyy")
 
-
-
         holder?.view?.loans_actor?.text = actor
         holder?.view?.loans_amount?.text = amount
         holder?.view?.loans_remarks?.text = rem
         holder?.view?.loans_date?.text = dateFormat.format(date)
+
+        holder?.view?.fab_delete_loan_debt?.setOnClickListener{
+            val pos = holder.adapterPosition
+            removeAt(pos)
+
+            val realm = Realm.getDefaultInstance()
+            deleteLoan(realm, rem, actor)
+        }
+    }
+
+    fun removeAt(pos: Int?) {
+        if (pos == null)
+            return
+
+        actor.removeAt(pos)
+        amount.removeAt(pos)
+        remark.removeAt(pos)
+        date.removeAt(pos)
+
+        notifyItemRemoved(pos)
+        notifyItemRangeChanged(pos, actor.size)
     }
 }
 

@@ -89,23 +89,21 @@ fun addExpense(realm: Realm, amount: Int, remarks: String, date: Date, categoryn
 
 fun deleteExpense(realm: Realm, amount: Int, remark: String, categoryname: String) {
     val expense = realm.where<Expense>(Expense::class.java)
-            .equalTo("remark", remark).equalTo("amount", amount)
-            .equalTo("category", categoryname).findFirst()!!
+            .equalTo("remarks", remark).equalTo("amount", amount)
+            .findFirst()!!
 
     realm.executeTransaction {
         expense.deleteFromRealm()
     }
 }
 
-fun addCategory(realm: Realm, name: String, color: String) {
+fun addCategory(realm: Realm, name: String) {
     /*
     add new category will throw primary key error if same name is added
      */
     realm.executeTransaction{ _ ->
         val category = realm.createObject<Category>(Category::class.java, name)
-        category.color = color
     }
-
 }
 
 fun deleteCategory(realm: Realm, name: String) {
@@ -131,9 +129,9 @@ fun addLoan(realm: Realm, amount: Int, remark: String, type: Boolean, actor: Str
     }
 }
 
-fun deleteLoan(realm: Realm, remark: String, type: Boolean, actor: String) {
+fun deleteLoan(realm: Realm, remark: String, actor: String) {
     val loan = realm.where<Loan>(Loan::class.java)
-            .equalTo("remark", remark).equalTo("type", type)
+            .equalTo("remark", remark)
             .equalTo("actor", actor).findFirst()!!
 
     realm.executeTransaction {

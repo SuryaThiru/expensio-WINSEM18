@@ -20,23 +20,24 @@ class AddDebtOrLoan : AppCompatActivity() {
         setContentView(R.layout.activity_add_debt_or_loan)
 
         fab_add_debt_loan.setOnClickListener{
-            val amnt = inp_loan_amnt.text.toString().toInt()
-            val rem = inp_loan_rem.text.toString()
-            val actor = inp_loan_actr.text.toString()
-            val opt = if (loan_radio.checkedRadioButtonId == 0) LOAN else DEBT
-            // TODO get date
+            try {
+                val amnt = inp_loan_amnt.text.toString().toInt()
+                val rem = inp_loan_rem.text.toString()
+                val actor = inp_loan_actr.text.toString()
+                val opt = if (loan_radio.checkedRadioButtonId == 0) LOAN else DEBT
 
+                val realm = Realm.getDefaultInstance()
+                addLoan(realm, amnt, rem, opt, actor, Date())
 
-            val realm = Realm.getDefaultInstance()
-            addLoan(realm, amnt, rem, opt, actor, Date())
+                Log.i("Add loan", "added new loan / debt")
+                Toast.makeText(this, "Added new loan / debt", Toast.LENGTH_SHORT).show()
 
-            Log.i("Realm write", "added new loan / debt")
-            Toast.makeText(this, "Added new loan / debt", Toast.LENGTH_SHORT).show()
-
-            inp_loan_actr.setText("")
-            inp_loan_rem.setText("")
-            inp_loan_amnt.setText("")
-            loan_radio.clearCheck()
+                finish()
+            }
+            catch (err: Exception) {
+                Log.e("Add loan", "Error occured " + err)
+                Toast.makeText(this, "Some error occured", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

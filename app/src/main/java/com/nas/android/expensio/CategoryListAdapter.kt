@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import io.realm.Realm
 import kotlinx.android.synthetic.main.category_list_cell.view.*
+import model.deleteCategory
 import model.getCategories
 
 
@@ -44,12 +45,25 @@ class CategoryListAdapter: RecyclerView.Adapter<CustomCategoryViewHolder>(){
     override fun onBindViewHolder(holder: CustomCategoryViewHolder?, position: Int) {
         val category = categories[position]
         holder?.view?.category_name?.text = category
-/*
-        holder?.view?.reason?.text = categories
-*/
+
+        holder?.view?.fab_delete_category?.setOnClickListener{
+            val pos = holder.adapterPosition
+            removeAt(pos)
+
+            val realm = Realm.getDefaultInstance()
+            deleteCategory(realm, category)
+        }
+    }
+
+    fun removeAt(pos: Int?) {
+        if (pos == null)
+            return
+
+        categories.removeAt(pos)
+
+        notifyItemRemoved(pos)
+        notifyItemRangeChanged(pos, categories.size)
     }
 }
 
-class CustomCategoryViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-
-}
+class CustomCategoryViewHolder(val view: View) : RecyclerView.ViewHolder(view)
