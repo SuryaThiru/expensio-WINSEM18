@@ -14,27 +14,31 @@
         android:foreground="?android:attr/selectableItemBackground">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
             <TextView
                 android:id="@+id/category_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="amount"
                 android:layout_weight="1"
-                />
-            <ImageView
-                android:id="@+id/category_color_category_list"
-                android:layout_width="81dp"
-                android:layout_height="76dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="category_color"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_launcher_foreground" />
+                android:capitalize="words"
+                android:padding="8dp"
+                android:text="cat"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_delete_expense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="bottom|center"
+                android:layout_marginEnd="17dp"
+                android:clickable="true"
+                app:backgroundTint="@color/scarlet"
+                app:srcCompat="@drawable/ic_delete" />
 
 
 
