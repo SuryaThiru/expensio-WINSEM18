@@ -39,13 +39,13 @@ class SetBudget : AppCompatActivity() {
         }
 
         pick_date_from.setOnClickListener {
-            val newFragment = DatePickerFragment(from)
+            val newFragment = DatePickerFragment(from, budget_from)
             // Show the date picker dialog
             newFragment.show(fragmentManager, "Date Picker")
         }
 
         pick_date_to.setOnClickListener {
-            val newFragment = DatePickerFragment(to)
+            val newFragment = DatePickerFragment(to, budget_to)
             // Show the date picker dialog
             newFragment.show(fragmentManager, "Date Picker")
         }

@@ -3,7 +3,6 @@ package com.nas.android.expensio
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.github.mikephil.charting.data.*
 import kotlinx.android.synthetic.main.activity_view_spend_trends.*
 import model.getTotalByCategory

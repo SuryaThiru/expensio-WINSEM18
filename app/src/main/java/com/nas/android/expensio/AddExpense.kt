@@ -26,7 +26,7 @@ class AddExpense : AppCompatActivity() {
 
         pick_date_of_expense.setOnClickListener{
             // Show the date picker dialog
-            val newFragment = DatePickerFragment(date)
+            val newFragment = DatePickerFragment(date, add_expense_date)
             newFragment.show(fragmentManager, "Date Picker")
         }
 
