@@ -3,6 +3,7 @@ package com.nas.android.expensio
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.github.mikephil.charting.data.*
 import kotlinx.android.synthetic.main.activity_view_spend_trends.*
 import model.getTotalByCategory
@@ -34,14 +35,13 @@ class ViewSpendTrends : AppCompatActivity() {
         val dataSet = PieDataSet(yVals, "Category wise trend")
         dataSet.valueTextSize=0f
         val colors = java.util.ArrayList<Int>()
-        colors.add(Color.RED)
-        colors.add(Color.BLUE)
-        colors.add(Color.GRAY)
-        colors.add(Color.GREEN)
-        colors.add(Color.MAGENTA)
+        colors.add(Color.parseColor(resources.getString(R.color.scarlet)))
+        colors.add(Color.parseColor(resources.getString(R.color.jordyBlue)))
+        colors.add(Color.parseColor(resources.getString(R.color.ecstasy)))
+        colors.add(Color.parseColor(resources.getString(R.color.jungleGreen)))
+        colors.add(Color.parseColor(resources.getString(R.color.jordyBlue)))
 
-
-        dataSet.setColors(colors)
+        dataSet.colors = colors
         val data = PieData(dataSet)
         pieChart.data = data
         pieChart.centerTextRadiusPercent = 0f
@@ -61,11 +61,11 @@ class ViewSpendTrends : AppCompatActivity() {
         }
 
         val colors = java.util.ArrayList<Int>()
-        colors.add(Color.RED)
-        colors.add(Color.BLUE)
-        colors.add(Color.GRAY)
-        colors.add(Color.GREEN)
-        colors.add(Color.MAGENTA)
+        colors.add(Color.parseColor(resources.getString(R.color.scarlet)))
+        colors.add(Color.parseColor(resources.getString(R.color.jordyBlue)))
+        colors.add(Color.parseColor(resources.getString(R.color.ecstasy)))
+        colors.add(Color.parseColor(resources.getString(R.color.jungleGreen)))
+        colors.add(Color.parseColor(resources.getString(R.color.jordyBlue)))
 
         var dataSet = BarDataSet(yVals, "Date wise bar graph")
         dataSet.colors = colors

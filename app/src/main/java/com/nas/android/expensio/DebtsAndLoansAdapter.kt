@@ -11,6 +11,7 @@ import model.deleteLoan
 import model.getLoans
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 /**
@@ -23,6 +24,7 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
     val amount = ArrayList<String>()
     val remark = ArrayList<String>()
     val date = ArrayList<Date?>()
+    val type = ArrayList<Boolean>()
 
     init {
         try {
@@ -41,6 +43,7 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
             amount.add(res.amount.toString())
             remark.add(res.remark)
             date.add(res.returnDate)
+            type.add(res.type)
         }
     }
 
@@ -66,6 +69,11 @@ class DebtsAndLoansAdapter: RecyclerView.Adapter<CustomDebtViewHolder>(){
         holder?.view?.loans_amount?.text = amount
         holder?.view?.loans_remarks?.text = rem
         holder?.view?.loans_date?.text = dateFormat.format(date)
+
+        if (type[position])
+            holder?.view?.loans_image?.setImageResource(R.drawable.ic_debt)
+        else
+            holder?.view?.loans_image?.setImageResource(R.drawable.ic_loan)
 
         holder?.view?.fab_delete_loan_debt?.setOnClickListener{
             val pos = holder.adapterPosition
