@@ -5,9 +5,11 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_budget_list.*
 import kotlinx.android.synthetic.main.activity_set_budget.*
+import kotlinx.android.synthetic.main.content_main_navigation.view.*
 import model.getTotalExpense
 import model.getUserBudget
 import java.text.SimpleDateFormat
@@ -25,50 +27,66 @@ class BudgetList : AppCompatActivity() {
         }
 
         val realm = Realm.getDefaultInstance()
-        val budget = getUserBudget(realm)
 
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+        try {
+            val budget = getUserBudget(realm)
 
-        from_date.text = dateFormat.format(budget.from)
-        to_date.text = dateFormat.format(budget.to)
-        week_budget.text = budget.amount.toString()
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy")
 
-        val total = getTotalExpense(budget.from, budget.to)
-        var diff = budget.amount - total.toInt()
+            from_date.text = dateFormat.format(budget.from)
+            to_date.text = dateFormat.format(budget.to)
+            week_budget.text = budget.amount.toString()
 
-        if (diff > 0) {
-            budget_outstanding.text = diff.toString()
-            budget_outstanding.setTextColor(Color.RED)
+            val total = getTotalExpense(budget.from, budget.to)
+            var diff = budget.amount - total.toInt()
+
+            if (diff > 0) {
+                budget_outstanding.text = diff.toString()
+                budget_outstanding.setTextColor(Color.RED)
+            }
+            else {
+                budget_outstanding.text = diff.toString()
+                budget_outstanding.setTextColor(Color.GREEN)
+            }
         }
-        else {
-            budget_outstanding.text = diff.toString()
-            budget_outstanding.setTextColor(Color.GREEN)
-        }
+        catch (err: Exception) {
+            Log.e("BudgetList", err.toString())
 
+            budget_layout.visibility = View.GONE
+        }
     }
 
     override fun onResume() {
         super.onResume()
 
-        val realm = Realm.getDefaultInstance()
-        val budget = getUserBudget(realm)
+        try {
+            budget_layout.visibility = if (budget_layout.visibility == View.GONE) View.VISIBLE else View.VISIBLE
 
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
+            val realm = Realm.getDefaultInstance()
+            val budget = getUserBudget(realm)
 
-        from_date.text = dateFormat.format(budget.from)
-        to_date.text = dateFormat.format(budget.to)
-        week_budget.text = budget.amount.toString()
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy")
 
-        val total = getTotalExpense(budget.from, budget.to)
-        var diff = budget.amount - total.toInt()
+            from_date.text = dateFormat.format(budget.from)
+            to_date.text = dateFormat.format(budget.to)
+            week_budget.text = budget.amount.toString()
 
-        if (diff > 0) {
-            budget_outstanding.text = diff.toString()
-            budget_outstanding.setTextColor(Color.GREEN)
+            val total = getTotalExpense(budget.from, budget.to)
+            var diff = budget.amount - total.toInt()
+
+            if (diff > 0) {
+                budget_outstanding.text = diff.toString()
+                budget_outstanding.setTextColor(Color.GREEN)
+            }
+            else {
+                budget_outstanding.text = diff.toString()
+                budget_outstanding.setTextColor(Color.RED)
+            }
         }
-        else {
-            budget_outstanding.text = diff.toString()
-            budget_outstanding.setTextColor(Color.RED)
+        catch (err: Exception) {
+            Log.d("Budget list", err.toString())
+
+            budget_layout.visibility = View.GONE
         }
     }
 }
