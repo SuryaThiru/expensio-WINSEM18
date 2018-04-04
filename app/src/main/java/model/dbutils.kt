@@ -157,17 +157,21 @@ fun getLoans(realm: Realm): RealmList<Loan> {
 
 // stats and stuff
 
-fun getTotalExpense(from: Date? = null, to: Date? = null) {
+fun getTotalExpense(from: Date? = null, to: Date? = null): Number {
     val expense = getExpenses(Realm.getDefaultInstance())
 
     if (from == null || to == null) {
         val sum = expense.sum("amount")
         Log.d("total expenses", sum.toString())
+
+        return sum
     }
     else {
         val sum = expense.where().greaterThanOrEqualTo("date", from)
                 .lessThanOrEqualTo("date", to).findAll()!!.sum("amount")
         Log.d("total expenses", sum.toString())
+
+        return sum
     }
 }
 
