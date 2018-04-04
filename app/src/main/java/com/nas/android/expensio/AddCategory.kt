@@ -18,10 +18,9 @@ class AddCategory : AppCompatActivity() {
 
         category_add.setOnClickListener {
             val name = input_name.text.toString()
-            val color = input_color.text.toString()
 
             val realm = Realm.getDefaultInstance()
-            addCategory(realm, name, color)
+            addCategory(realm, name)
 
             Log.i("Realm write", "added new category")
             Toast.makeText(this, "Added new category", Toast.LENGTH_SHORT).show()
